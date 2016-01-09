@@ -13,7 +13,7 @@ This repository contains Ansible-based tools for:
 
 ## Configuration
 * Copy `hosts.example` to `hosts`, and create records of all servers to which your Meteor app should be deployed.
-* Edit `vars/main.yml` and adjust the following values:
+* Copy `config.yml.example` to `config.yml`, and adust the following values:
   * meteor_project_git
   * meteor_project_version
   * meteor_version

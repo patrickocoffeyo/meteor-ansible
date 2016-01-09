@@ -1,5 +1,5 @@
 ---
-# Path to git repository containing Meteor project.
+# Path to git repository containing Meteor source project.
 meteor_project_git: "git@github.com:username/repository_name.git"
 
 # Tag, branch, or SHA-1 hash version of repo to check out.
