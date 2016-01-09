@@ -20,3 +20,7 @@
     - name: Provision | Install make.
       apt: pkg=make state=present
       sudo: yes
+
+    - name: Provision | Install gi.
+      apt: pkg=git state=present
+      sudo: yes
