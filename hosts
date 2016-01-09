@@ -1,0 +1,4 @@
+[server_name]
+alias ansible_ssh_host=111.111.11
+alias ansible_ssh_user=ubuntu
+alias ansible_ssh_private_key_file=/path/to/key.pem
