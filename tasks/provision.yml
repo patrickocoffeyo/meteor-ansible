@@ -1,5 +1,5 @@
 - name: Provision Meteor Server
-  hosts: '{{ hosts }}'
+  hosts: all
   sudo: yes
 
   # Load configuration files.

@@ -1,5 +1,5 @@
 - name: Deploy Meteor Instance to Provisioned Server
-  hosts: '{{ hosts }}'
+  hosts: all
   sudo: yes
 
   # Load configuration files.
