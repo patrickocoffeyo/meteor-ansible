@@ -1,0 +1,11 @@
+---
+# Use latest Meteor-supported version of nodejs.
+nodejs_version: "0.12"
+
+# Do not install forever.
+nodejs_forever: false
+
+# Install PM2.
+nodejs_npm_global_packages:
+  - name: pm2
+
