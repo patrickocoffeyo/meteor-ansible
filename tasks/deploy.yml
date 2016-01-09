@@ -8,11 +8,14 @@
 
   # Define tasks.
   tasks:
-    - name: Meteor | Download project.
-      unarchive: src={{ build_src }} dest={{ /var/www/meteor }} copy=no
+    - name: Build | Checkout project.
+      git:
+        repo: {{ meteor_project_git }}
+        version: {{ meteor_project_version }}
+        destination: "/tmp/project"
 
-    - name: Meteor | Install project dependencies.
-      command: cd /var/www/meteor/bundle/programs/server && npm install
+    - name: Build | Run build process.
+      command: cd /tmp/project && /usr/local/bin/meteor build --directory /var/www
 
-    - name: Meteor | Run Meteor on specified port.
-      command: cd /var/www/meteor && {{ env_variables }} node main.js
+    - name: Build | Install project dependencies.
+      command: cd /var/www/bundle/programs/server && npm install

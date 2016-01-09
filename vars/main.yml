@@ -1,4 +1,13 @@
 ---
+# Path to git repository containing Meteor project.
+meteor_project_git: "git@github.com:username/repository_name.git"
+
+# Tag, branch, or SHA-1 hash version of repo to check out.
+meteor_project_version: "master"
+
+# Version of meteor core to run on server.
+meteor_version: "1.2.1"
+
 # Use latest Meteor-supported version of nodejs.
 nodejs_version: "0.12"
 
@@ -8,4 +17,3 @@ nodejs_forever: false
 # Install PM2.
 nodejs_npm_global_packages:
   - name: pm2
-

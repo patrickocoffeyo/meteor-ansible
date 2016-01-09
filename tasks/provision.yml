@@ -9,13 +9,14 @@
   # Define galaxy roles.
   roles:
     - geerlingguy.nodejs
+    - carlos.acp.meteor
 
   # Define tasks.
   tasks:
-    - name: Meteor | Install g++.
+    - name: Provision | Install g++.
       apt: pkg=g++ state=present
       sudo: yes
 
-    - name: Meteor | Install make.
+    - name: Provision | Install make.
       apt: pkg=make state=present
       sudo: yes
