@@ -21,6 +21,6 @@
       apt: pkg=make state=present
       sudo: yes
 
-    - name: Provision | Install gi.
+    - name: Provision | Install git.
       apt: pkg=git state=present
       sudo: yes

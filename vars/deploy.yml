@@ -1,3 +1,0 @@
----
-# Path to git repository containing Meteor project.
-meteor_project_git: "git@github.com:username/repository_name.git"
