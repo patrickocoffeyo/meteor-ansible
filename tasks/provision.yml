@@ -1,0 +1,21 @@
+- name: Provision Meteor Server
+  hosts: '{{ hosts }}'
+  sudo: yes
+
+  # Load configuration files.
+  vars_files:
+    ../vars/main.yml
+
+  # Define galaxy roles.
+  roles:
+    - geerlingguy.nodejs
+
+  # Define tasks.
+  tasks:
+    - name: Meteor | Install g++.
+      apt: pkg=g++ state=present
+      sudo: yes
+
+    - name: Meteor | Install make.
+      apt: pkg=make state=present
+      sudo: yes
