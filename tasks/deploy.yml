@@ -1,6 +1,5 @@
 - name: Deploy Meteor Instance to Provisioned Server
   hosts: all
-  sudo: yes
 
   # Load configuration files.
   vars_files:
@@ -8,16 +7,36 @@
 
   # Define tasks.
   tasks:
+    - name: Build | Remove any old project sources.
+      file:
+        path: "/tmp/project"
+        state: "absent"
+
+    - name: Build | Remove any old project build destinations.
+      file:
+        path: "~/app"
+        state: "absent"
+
     - name: Build | Checkout project source.
       git:
-        repo: {{ meteor_project_git }}
-        version: {{ meteor_project_version }}
-        destination: "/tmp/project"
+        repo: "{{ meteor_project_git }}"
+        version: "{{ meteor_project_version }}"
+        dest: "/tmp/project"
+        clone: yes
+        update: yes
+        accept_hostkey: true
 
     - name: Build | Run build process.
-      command: cd /tmp/project && /usr/local/bin/meteor build --directory /var/www
+      command: /usr/local/bin/meteor build --directory ~/app
+      args:
+        chdir: "/tmp/project"
 
     - name: Build | Remove project source.
+      file:
+        path: "/tmp/project"
+        state: "absent"
 
     - name: Build | Install project dependencies.
-      command: cd /var/www/bundle/programs/server && npm install
+      command: npm install
+      args:
+        chdir: "~/app/bundle/programs/server"
