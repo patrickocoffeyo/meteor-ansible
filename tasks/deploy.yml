@@ -27,7 +27,7 @@
         accept_hostkey: true
 
     - name: Build | Run build process.
-      command: /usr/local/bin/meteor build --directory ~/app
+      command: "/usr/local/bin/meteor build --directory ~/app --architecture {{ meteor_env_architecture }}"
       args:
         chdir: "/tmp/project"
 

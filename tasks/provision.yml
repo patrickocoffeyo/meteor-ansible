@@ -4,7 +4,7 @@
 
   # Load configuration files.
   vars_files:
-    - ../main.yml
+    - ../config.yml
 
   # Define galaxy roles.
   roles:

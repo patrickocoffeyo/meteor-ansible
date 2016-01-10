@@ -1,19 +1,32 @@
 ---
+##
+# Meteor Configuration.
+##
+
 # Path to git repository containing Meteor source project.
-meteor_project_git: "git@github.com:username/repository_name.git"
+meteor_project_git: "git@github.com:username/reponame.git"
 
 # Tag, branch, or SHA-1 hash version of repo to check out.
 meteor_project_version: "master"
 
+# Environment variables to export to Meteor.
+meteor_env_variables:
+  PORT: "300" # This will be mapped to port 80.
+  ROOT_URL: "http://project.com"
+  MONGO_URL: "mongodb://username:password@mongoinstance.com"
+
 # Version of meteor core to run on server.
 meteor_version: "1.2.1"
 
+# Define build architecture.
+meteor_env_architecture: "os.linux.x86_64"
+
+##
+# Nodejs Configuration.
+##
+
 # Use latest Meteor-supported version of nodejs.
-nodejs_version: "0.12"
+nodejs_version: "0.10"
 
 # Do not install forever.
-nodejs_forever: false
-
-# Install PM2.
-nodejs_npm_global_packages:
-  - name: pm2
+nodejs_forever: true
