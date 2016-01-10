@@ -20,5 +20,6 @@ This repository contains Ansible-based tools for:
 
 ## Use
 * To provision a server, run: `ansible-playbook -i hosts tasks/provision.yml`
-* To deploy the meteor app specified in `vars/main.yml`, run: `ansible-playbook -i hosts tasks/deploy.yml`
+* To deploy the Meteor app specified in `vars/main.yml`, run: `ansible-playbook -i hosts tasks/deploy.yml`
+* To start your deployed Meteor application, run: `ansible-playbook -i hosts tasks/run.yml`
 
